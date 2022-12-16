@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar'
 import Header from '../components/Header'
 import Pricing from '../components/Pricing'
 import Services from '../components/Services'
+import Testimonials from '../components/Testimonials'
+import Footer from '../components/Footer'
 
 
 export default function Home() {
@@ -21,6 +23,8 @@ export default function Home() {
        <Header/>
        <Pricing/>
        <Services/>
+       <Testimonials/>
+       <Footer/>
       </main>
     </>
   )

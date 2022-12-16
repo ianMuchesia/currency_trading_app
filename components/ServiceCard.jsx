@@ -9,7 +9,7 @@ const ServiceCard = () => {
     <div>
       {" "}
       
-      <div className="grid gap-4">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       <div className="mx-auto flex w-80 flex-col justify-center bg-white rounded-2xl shadow-xl shadow-gray-400/20">
 
         <div className="grid place-items-center"><Image
