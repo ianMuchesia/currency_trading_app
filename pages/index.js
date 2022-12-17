@@ -10,7 +10,8 @@ import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 
 
-export default function Home() {
+export default function Home({list, symbol}) {
+  console.log(symbol)
   return (
     <>
       <Head>
@@ -21,7 +22,7 @@ export default function Home() {
       </Head>
       <main >
        <Header/>
-       <Pricing/>
+       <Pricing data={list.currencies} />
        <Services/>
        <Testimonials/>
        <Footer/>
@@ -29,3 +30,34 @@ export default function Home() {
     </>
   )
 }
+
+export const getStaticProps=async()=>{
+  try{
+    const myHeaders = new Headers();
+    myHeaders.append("apikey", "g8HhsPzdptDtov298Xz5Q3LBvIsvULYd");
+
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+      headers: myHeaders
+    };
+
+    const response = await fetch("https://api.apilayer.com/currency_data/list", requestOptions);
+    const data = await response.json();
+    
+    return{
+      props:{
+         list:data
+      }
+
+    }
+
+  }catch(error){
+    console.log(error.message)
+  }
+
+ 
+}
+
+
+
