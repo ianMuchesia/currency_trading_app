@@ -6,36 +6,7 @@ import bitcoin_encryption from "../public/bitcoin-encryption.png";
 import mining_hardware from "../public/mining-hardware.png"
 const ServiceCard = () => {
 
-  useEffect(()=>{
-    const fetchData=async()=>{
-    try{
-      const date = new Date();
-      const currentTime = Math.floor(date.getTime()/100)
   
-      let oneDay;
-      if(date.getDay()===6){
-        oneDay = currentTime - 2*24*60*60;
-      }else if(date.getDay()===0){
-        oneDay = currentTime -3*24*60*60;
-      }else{
-        oneDay = currentTime - 24*60*60
-      }
-  
-      const oneWeek = currentTime - 7*24*60*60
-      const responses = await fetch(`https://finnhub.io/api/v1/stock/candle?symbol=MSFT&resolution=1&from=${oneWeek}&to=${currentTime}&token=ccq5kriad3i4o9irpul0ccq5kriad3i4o9irpulg
-      `)
-      const data =await  responses.json()
-  
-      console.log(data)
-  
-  
-  
-    }catch(error){
-  
-    }
-  }
-  fetchData()
-  },[])
   return (
     <div>
       {" "}
@@ -46,6 +17,7 @@ const ServiceCard = () => {
         <div className="grid place-items-center"><Image
           className=" w-40 object-center  h-40  "
           src={altcoins}
+          alt=""
         />
         </div>
         <div className="p-6">
@@ -65,6 +37,7 @@ const ServiceCard = () => {
         <div className="grid place-items-center"><Image
           className=" w-40 object-center  h-40  "
           src={bitcoin_encryption}
+          alt=""
         />
         </div>
         <div className="p-6">
@@ -84,6 +57,7 @@ const ServiceCard = () => {
         <div className="grid place-items-center"><Image
           className=" w-40 object-center  h-40  "
           src={mining_hardware}
+          alt=""
         />
         </div>
         <div className="p-6">
@@ -104,6 +78,7 @@ const ServiceCard = () => {
         <div className="grid place-items-center"><Image
           className=" w-40 object-center  h-40  "
           src={bitcoin_calculator}
+          alt=""
         />
         </div>
         <div className="p-6">

@@ -8,10 +8,10 @@ import Pricing from '../components/Pricing'
 import Services from '../components/Services'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
+import LivePricing from '../components/LivePricing'
 
-
-export default function Home({list, symbol}) {
-  console.log(symbol)
+export default function Home() {
+  
   return (
     <>
       <Head>
@@ -22,7 +22,8 @@ export default function Home({list, symbol}) {
       </Head>
       <main >
        <Header/>
-       <Pricing data={list.currencies} />
+       {/* <Pricing  data={list.currencies} />  */}
+       <LivePricing />
        <Services/>
        <Testimonials/>
        <Footer/>
@@ -30,7 +31,7 @@ export default function Home({list, symbol}) {
     </>
   )
 }
-
+/* 
 export const getStaticProps=async()=>{
   try{
     const myHeaders = new Headers();
@@ -54,10 +55,11 @@ export const getStaticProps=async()=>{
 
   }catch(error){
     console.log(error.message)
-  }
+  } 
+ 
 
  
-}
+} */
 
 
 
