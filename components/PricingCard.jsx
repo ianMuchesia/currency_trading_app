@@ -1,9 +1,60 @@
 import React from "react";
 
-const PricingCard = () => {
+import dynamic from 'next/dynamic'
+    
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+const PricingCard = ({name, data}) => {
+  
+
+  const state = {
+    options:{
+    xaxis: {
+      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      type:"datetime",
+      labels: {
+          datetimeUTC: false
+      }
+    },
+  
+    title:{
+      text: name,
+      align: "center",
+      style: {
+          fontSize: "24px"
+      }
+  },
+  chart:{
+      id: "stock data",
+      animations: {
+          speed: 1300
+      }
+  },
+  tooltip:{
+      x:{
+          format: "MMM dd HH:MM"
+      }
+  },
+},
+  series: [
+    {
+      name: "series-1",
+      data: [30, 40, 45, 50, 49, 60, 70, 91]
+    }
+  ]
+
+  };
+
   return (
     <div>
-      <div className="border-2 border-gray-800 rounded-xl shadow-lg">
+    <Chart
+              options={state.options}
+              series={state.series}
+              type="area"
+              width="500"
+            />
+
+
+   {/*    <div className="border-2 border-gray-800 rounded-xl shadow-lg">
         <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4  dark:bg-gray-800">
           <p className="text-lg font-medium">Personal</p>
           <p className="text-5xl font-bold">
@@ -69,7 +120,7 @@ const PricingCard = () => {
             Sign up
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

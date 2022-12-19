@@ -23,7 +23,7 @@ const Header = () => {
         <div>
             <Image
             src={bitcoinShiny}
-            alt=""
+            alt="bitcoin shiny"
             className="object-cover sm:w-full h-[527px] lg:h-[620px]"/>
         </div>
         <div style={{background: "rgba(3, 27, 52, 0.66)"}}
@@ -33,7 +33,7 @@ const Header = () => {
                 <Image
                 src={bitcoin}
                 
-                alt=""
+                alt="bitcoin coin"
                
                 className="rotate-45  top-28 ml-52 h-28 w-28 absolute sm:left-48"
                 />
@@ -47,25 +47,25 @@ const Header = () => {
                 <p className="text-sm lg:text-lg text-gray-200 hidden lg:block">There are many variations of passages of Lorem Ipsum form, by injected humour randomised words which don't look even slightly believable.</p>
                 <button style={{background: "linear-gradient(90.07deg, #FF436B -0.79%, rgba(253, 165, 109, 0.98) 99.94%)"}}
                 className="text-xl p-3 mt-2 mx-2 rounded-lg text-white ">Start Here</button>
-                <Image src={cent} alt=""
+                <Image src={cent} alt="a canadian cent"
                 className="-rotate-45 h-24 w-16 ml-10 mt-4 "/>
             </div>
             <Image
                 src={bitcoin}
                 
-                alt=""
+                alt="bitcoin coin"
                
                 className="hidden sm:block absolute -rotate-45  bottom-24 right-48 h-28 w-32 "
                 />
-                 <Image src={cent} alt=""
+                 <Image src={cent} alt="a canadian cent"
                 className="rotate-45 h-48 w-32 hidden xl:block absolute top-24 right-[600px] "/>
-                <Image src={cent} alt=""
+                <Image src={cent} alt="a canadian cent"
                 className="-rotate-45 h-48 w-32 hidden xl:block absolute bottom-40 right-[600px]"/>
-                 <Image src={cent} alt=""
+                 <Image src={cent} alt="a canadian cent"
                 className="rotate-45 h-48 w-32 hidden xl:block absolute bottom-0 right-[600px]"/>
                 <Image
                 src={AI}
-                alt=""
+                alt="ROBOT"
                 className='bottom-0 right-0 absolute h-96 w-48 lg:h-[550px] lg:w-96'/>
                 
         </div>
