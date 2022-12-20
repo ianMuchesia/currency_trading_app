@@ -2,55 +2,52 @@ import React from "react";
 
 import dynamic from 'next/dynamic'
     
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+const Chart = dynamic( () =>  import('react-apexcharts'), { ssr: false });
+
+
 const PricingCard = ({name, data}) => {
-  
+ 
 
   const state = {
     options:{
-    xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+     xaxis: {
+      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998] || [], 
       type:"datetime",
       labels: {
           datetimeUTC: false
-      }
-    },
+   } 
+   },
   
-    title:{
-      text: name,
+     title:{
+      text: name || " ",
       align: "center",
       style: {
           fontSize: "24px"
-      }
+      } 
   },
-  chart:{
-      id: "stock data",
-      animations: {
-          speed: 1300
-      }
-  },
-  tooltip:{
+
+tooltip:{
       x:{
           format: "MMM dd HH:MM"
       }
-  },
+  }, 
 },
   series: [
     {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91]
+     
+      data: [30, 40, 45, 50, 49, 60, 70, 91] || [],
     }
-  ]
+  ] 
 
   };
 
   return (
     <div>
     <Chart
-              options={state.options}
-              series={state.series}
+              options={state?.options}
+              series={state?.series}
               type="area"
-              width="500"
+              width="100%"
             />
 
 
